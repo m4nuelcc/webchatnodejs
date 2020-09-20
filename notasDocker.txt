@@ -1,0 +1,37 @@
+1- creamos una carpeta con el nombre de proyecto
+2- abrimos esa carpeta con visual studio code
+3- Abrimos una terminal presionando Ctrl+Ñ
+4- creamos el fichero package.json con el comando npm init -y
+5- instalamos express y conexion con mongo con npm i express mongoose
+6- Creamos dentro de la carpeta node-docker-mongo una carpeta llamada scr 
+   y dentro de esta creamos el fichero index.js y otro database.js
+   programamos el servidor en index.js y la llamada al servidor con database.js
+ 
+7. Para ejecutar el servidor ponemos en consola node src/index.js
+8. Para utilizar docker creamos en raiz el dichero Dockerfile y lo configuramos
+9. cramos un fichero llamado .dockerignore y dentro escribimos node_moudules
+   para que no nos copie todas las dependencias de node_modules
+10 en el fichero package.json en scripts añadimos  "start" : "node src/index.js"
+   y ahora para ejecutar en consola tenemos que poner npm start
+
+CREAR CONTENEDOR DE DOCKERFILE
+11 build -t webchat .
+
+PARA EJECUTAR EL CONTENEDOR DOCKERFILE
+12 docker run -p 4000:3000 webchat
+
+
+SUBIR IMAGEN A DOCKER HUB
+13 docker login
+13 docker tag  webchat malok0/webchat:v1
+14 docker push malok0/webchat:v1
+
+CREACCION FICHERO DOCKER-COMPOSE
+15  docker-compose.yml
+
+PARA CONSTRUIR EL CONTENEDOR DE COMPOSE
+16 docker-compose build
+
+PARA EJECUTAR CONTENEDOR
+17 docker-compose up
+

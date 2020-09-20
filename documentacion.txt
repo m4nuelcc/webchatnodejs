@@ -1,0 +1,15 @@
+Tutorial de Fazt https://www.youtube.com/watch?v=vGikkrp-HPM&t=13s
+Docuemntacion en github https://github.com/FaztTech/chat-javascript-fullstack
+ 1 npm init --yes 
+ 2 npm install express
+ 3 web para poner fondos https://uigradients.com/#Stripe
+ 4 instalacion npm install socket.io
+ 5 localhost:3000/socket.io/socket.io.js nos muestra codigo js de io
+ 7 instalamos nodemon npm install nodemon -D
+   y en package.json ponemos
+    "scripts": {"dev": "nodemon src/index.js"}
+ 8 para ejecutar npm run dev  
+ 9 Metemos Bootstap en index.html https://getbootstrap.com/docs/4.4/getting-started/introduction/
+ 10 metemos Jquey en index.html https://code.jquery.com/
+ 
+ 
