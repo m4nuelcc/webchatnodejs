@@ -11,5 +11,5 @@ Docuemntacion en github https://github.com/FaztTech/chat-javascript-fullstack
  8 para ejecutar npm run dev  
  9 Metemos Bootstap en index.html https://getbootstrap.com/docs/4.4/getting-started/introduction/
  10 metemos Jquey en index.html https://code.jquery.com/
- 
+ 11 CDN de los iconos https://fontawesome.com/
  
