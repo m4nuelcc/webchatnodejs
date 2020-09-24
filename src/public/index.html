@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Chat Javascript FullStack</title>
+
   <!-- BOOTSTRAP 4 -->
   <link
   rel="stylesheet"
@@ -15,15 +16,17 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
   integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
   crossorigin="anonymous"></script>
+
+<!-- ENLAZANDO CON EL MAIN.CSS -->
   <link rel="stylesheet" href="/css/main.css" />
 </head>
 
 
 <body>
   <!-- MENU -->
-  <nav class="navbar navbar-dark bg-warning">
+  <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand mx-auto" href="/">
-      Javascript FullStack Chatttiiin
+      V c h a k 
     </a>
   </nav>
 
@@ -34,7 +37,7 @@
       <div class="row">
         <div class="col-md-4 mx-auto">
           <div class="card">
-            <div class="card-header">
+            <div class="card-header bg-dark">
               <h3>Enter your Username</h3>
             </div>
             <p id="nickError"></p>
@@ -68,7 +71,7 @@
                 <input type="text" id="message" class="form-control" />
                 <div class="input-group-append">
                   <button class="btn btn-warning">
-                    <i class="fas fa-location-arrow"></i> Send
+                    <i class="fas fa-location-arrow"></i> Enviar
                   </button>
                 </div>
               </div>
@@ -93,9 +96,11 @@
   </div>
 
   <!-- SCRIPTS -->
+  <!-- enlazamos con JQery -->
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
-  <script src="/socket.io/socket.io.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- enlazamos por la parte del cliente -->
   <script src="/js/main.js"></script>
 </body>
 

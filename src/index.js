@@ -14,14 +14,18 @@ const io = socketio.listen(server);
 //indica al puerto que se conecta
 app.set('port', process.env.PORT || 3000);
 
-//llamamos a la funcio io  que esta en ./public/socket
+
+//llamamos a la funcion io  que esta en ./public/socket
+// para arrancar el servidor
 require('./public/sockets')(io);
 
 //static files, llama a la carpta public
 // {app.use(express.static('public'))}
-//__dirname te la ruta de donde estamos
+
+//__dirname te da la ruta de donde estamos
 // utilizamos path.join para que la ruta absoluta 
 // nos valga tanto en linux como el win
+// manda la carpeta public al navegador cada vez que un usuario entra
 app.use(express.static(path.join(__dirname, 'public')));
 
 // app.listen(3000,console.log('conectado al puerto 3000')

@@ -1,15 +1,15 @@
 // ESTA ES LA PARTE DEL SERVIDOR
-//ahora quedate escuchando cuando halla otra conexion
+//ahora quedate escuchando cuando haya otra conexion
 module.exports = function(io) { 
 
    let nicknames = [
-     'many',
+     'manu',
      'renee',
      'coco'
    ]; 
 
   io.on('connection', socket => {
-    console.log('new usuario conectadoooooooooooooo');
+    console.log('new usuario conectado');
 
 
     socket.on('new user', (data, cb)=> {
@@ -28,7 +28,7 @@ module.exports = function(io) {
 
 
     socket.on('send message', data => {
-      io.sockets.emit('nuevo mensaje', {
+      io.sockets.emit('new message', {
         msg: data,
         nick: socket.nickname
       });

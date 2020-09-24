@@ -15,7 +15,7 @@
    y ahora para ejecutar en consola tenemos que poner npm start
 
 CREAR CONTENEDOR DE DOCKERFILE
-11 build -t webchat .
+11 docker build -t webchat .
 
 PARA EJECUTAR EL CONTENEDOR DOCKERFILE
 12 docker run -p 4000:3000 webchat

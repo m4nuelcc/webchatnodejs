@@ -38,7 +38,7 @@ $messageform.submit(function (e) {
   $messageBox.val(''); //borra el input
 });
 
-socket.on('nuevo mensaje', function (data) {
+socket.on('new message', function (data) {
   $chat.append('<b>' + data.nick + '</b>: ' + data.msg  + '<br/>' );
 });
 // Recorre el array para mostar los usuarios en pantalla 
