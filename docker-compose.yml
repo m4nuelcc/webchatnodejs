@@ -13,6 +13,6 @@ services:
 
     mongo:
           container_name: mymongodatabase
-          image: mongo
+          image: nonoroazoro/rpi-mongo
           ports:
              - "27018:27017"
