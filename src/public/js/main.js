@@ -34,13 +34,16 @@ $nickForm.submit(e => {
 // Eventos
 $messageform.submit(function (e) {
   e.preventDefault(); //es para que no refresque la pagina
-  socket.emit('send message', $messageBox.val()); // envia el msg a los clientes
+  socket.emit('send message', $messageBox.val(), data => {
+    $chat.append(`<p class="error">${data}</p>`)
+  }); // envia el msg a los clientes
   $messageBox.val(''); //borra el input
 });
 
 socket.on('new message', function (data) {
   $chat.append('<b>' + data.nick + '</b>: ' + data.msg  + '<br/>' );
 });
+
 // Recorre el array para mostar los usuarios en pantalla 
 socket.on('usernames', data => {
   let html = '';
@@ -48,7 +51,9 @@ socket.on('usernames', data => {
     html += `<p><i class="fas fa-user"></i>${data[i]}</P>`
   }
   $users.html(html);
-
 });
 
+socket.on('whisper', data => {
+$chat.append(`<p class="whisper"><b>${data.nick}:</b> ${data.msg}</p>`)
+})
 })
