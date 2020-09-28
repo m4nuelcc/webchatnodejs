@@ -1,4 +1,5 @@
 version: "3"
+
 services:
     web:
         container_name: webchat
@@ -13,6 +14,6 @@ services:
 
     mongo:
           container_name: mymongodatabase
-          image: nonoroazoro/rpi-mongo
+          image: mongo
           ports:
              - "27018:27017"

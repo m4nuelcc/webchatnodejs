@@ -10,6 +10,19 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio.listen(server);
 
+
+//db connection
+const mongoose =require('mongoose');
+
+mongoose.connect('mongodb://mongo/chat', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+    .then(db => console.log('Db is connect to',db.connection.host))
+    .catch(err => console.log(err));
+
+
+
 //settings
 //indica al puerto que se conecta
 app.set('port', process.env.PORT || 3000);
@@ -17,7 +30,7 @@ app.set('port', process.env.PORT || 3000);
 
 //llamamos a la funcion io  que esta en ./public/socket
 // para arrancar el servidor
-require('./public/sockets')(io);
+require('./sockets')(io);
 
 //static files, llama a la carpta public
 // {app.use(express.static('public'))}

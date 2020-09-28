@@ -1,4 +1,6 @@
 // ESTA ES LA PARTE DEL SERVIDOR
+const Chat = require('./models/Chat');
+
 //ahora quedate escuchando cuando haya otra conexion
 module.exports = function(io) { 
 
@@ -10,9 +12,11 @@ module.exports = function(io) {
 
   let users = {};
 
-  io.on('connection', socket => {
+  io.on('connection', async socket => {
     console.log('new usuario conectado');
 
+     let messages = await Chat.find({});
+     socket.emit('load old msgs', messages);
 
     socket.on('new user', (data, cb)=> {
       console.log(data);
@@ -32,7 +36,7 @@ module.exports = function(io) {
 
     //analizamos el texto y luego lo mandamos a quien corresponda o al chat general
 
-    socket.on('send message', (data, cb) => {
+    socket.on('send message', async (data, cb) => {
       
       //quitamos los espacios de mas en el stream
       var msg = data.trim();
@@ -68,6 +72,12 @@ module.exports = function(io) {
         }
 
       } else{
+        var newMsg = new Chat ({
+          msg : msg,
+          nick : socket.nickname
+        });
+        await newMsg.save();
+
         io.sockets.emit('new message', {
           msg: data,
           nick: socket.nickname
